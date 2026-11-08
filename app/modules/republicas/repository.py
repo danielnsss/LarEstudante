@@ -1,4 +1,5 @@
-
+from decimal import Decimal
+from sqlalchemy import func
 from sqlalchemy import select
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session, selectinload
@@ -119,3 +120,56 @@ def excluir_republica(
     except SQLAlchemyError:
         db.rollback()
         raise
+
+def buscar_disponiveis(
+    db: Session,
+    *,
+    preco_maximo: Decimal | None,
+    localizacao: str | None,
+    comodidades: list[str],
+    genero_republica: str | None,
+    max_moradores: int | None,
+    vagas_minimas: int
+):
+    consulta = (
+        select(Republica)
+        .options(selectinload(Republica.comodidades))
+        .where(
+            Republica.vagas_disponiveis >= vagas_minimas
+        )
+    )
+
+    if preco_maximo is not None:
+        consulta = consulta.where(
+            Republica.preco <= preco_maximo
+        )
+
+    if localizacao is not None:
+        consulta = consulta.where(
+            Republica.localizacao.icontains(
+                localizacao,
+                autoescape=True
+            )
+        )
+
+    if genero_republica is not None:
+        consulta = consulta.where(
+            func.lower(Republica.genero_republica)
+            == genero_republica
+        )
+
+    if max_moradores is not None:
+        consulta = consulta.where(
+            Republica.numero_moradores <= max_moradores
+        )
+
+    for nome in comodidades:
+        consulta = consulta.where(
+            Republica.comodidades.any(
+                Comodidade.nome == nome
+            )
+        )
+
+    consulta = consulta.order_by(Republica.id)
+
+    return db.scalars(consulta).all()

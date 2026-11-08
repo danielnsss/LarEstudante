@@ -13,8 +13,13 @@ from app.modules.republicas.router import (
     router as republicas_router
 )
 
+from app.modules.busca.router import (
+    router as busca_router
+)
+
 api_router = APIRouter()
 
 api_router.include_router(autenticacao_router)
 api_router.include_router(usuarios_router)
 api_router.include_router(republicas_router)
+api_router.include_router(busca_router)
