@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Criar Conta — LarEstudante</title>
+
+    <link rel="stylesheet" href="./css/style.css?v=2">
+
+    <script type="module" src="./js/cadastro.js"></script>
+    <script type="module" src="./js/navegacao.js"></script>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="container barra-superior">
+            <a class="marca" href="./">
+                <span class="marca-icone">⌂</span>
+                Lar<span>Estudante</span>
+            </a>
+
+            <nav id="menu-usuario" class="menu-usuario"
+                 aria-label="Navegação principal">
+            </nav>
+        </div>
+    </header>
+
+    <main class="area-autenticacao">
+        <section class="painel-autenticacao">
+            <p class="etiqueta">BEM-VINDO AO LARESTUDANTE</p>
+
+            <h1>Criar minha conta</h1>
+
+            <p class="texto-apoio">
+                Cadastre-se para encontrar uma moradia ou
+                anunciar vagas em repúblicas estudantis.
+            </p>
+
+            <form id="form-cadastro" class="form-autenticacao">
+                <div class="campo">
+                    <label for="nome">Nome completo</label>
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        maxlength="120"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        maxlength="255"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="tipo">Tipo de usuário</label>
+                    <select id="tipo" name="tipo" required>
+                        <option value="">Selecione seu perfil</option>
+                        <option value="estudante">Estudante</option>
+                        <option value="locador">Locador</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        minlength="8"
+                        autocomplete="new-password"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="confirmar-senha">Confirmar senha</label>
+                    <input
+                        type="password"
+                        id="confirmar-senha"
+                        name="confirmar_senha"
+                        minlength="8"
+                        autocomplete="new-password"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="botao-primario">
+                    Criar conta
+                </button>
+            </form>
+
+            <p id="mensagem-cadastro"
+               class="mensagem-form"
+               role="status"
+               aria-live="polite"></p>
+
+            <p class="texto-rodape-form">
+                Já possui uma conta?
+                <a href="./login.html">Entrar</a>
+            </p>
+        </section>
+    </main>
+</body>
+</html>

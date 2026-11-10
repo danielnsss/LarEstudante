@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Entrar — LarEstudante</title>
+
+    <link rel="stylesheet" href="./css/style.css?v=2">
+
+    <script type="module" src="./js/login.js"></script>
+    <script type="module" src="./js/navegacao.js"></script>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="container barra-superior">
+            <a class="marca" href="./">
+                <span class="marca-icone">⌂</span>
+                Lar<span>Estudante</span>
+            </a>
+
+            <nav id="menu-usuario" class="menu-usuario"
+                 aria-label="Navegação principal">
+            </nav>
+        </div>
+    </header>
+
+    <main class="area-autenticacao">
+        <section class="painel-autenticacao">
+            <p class="etiqueta">ACESSE SUA CONTA</p>
+
+            <h1>Entrar no LarEstudante</h1>
+
+            <p class="texto-apoio">
+                Utilize seu e-mail e senha para acessar
+                a plataforma.
+            </p>
+
+            <form id="form-login" class="form-autenticacao">
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="username"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="botao-primario">
+                    Entrar
+                </button>
+            </form>
+
+            <p id="mensagem-login"
+               class="mensagem-form"
+               role="status"
+               aria-live="polite"></p>
+
+            <p id="link-sucesso-login"
+               class="texto-rodape-form"
+               hidden>
+                <a href="./">Ir para a página inicial</a>
+            </p>
+
+            <p class="texto-rodape-form">
+                Ainda não tem conta?
+                <a href="./cadastro.html">Criar conta</a>
+            </p>
+        </section>
+    </main>
+</body>
+</html>
