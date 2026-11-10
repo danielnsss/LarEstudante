@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explorar Repúblicas — LarEstudante</title>
+
+    <link rel="stylesheet" href="./css/style.css?v=3">
+
+    <script type="module" src="./js/explorar.js"></script>
+    <script type="module" src="./js/navegacao.js"></script>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="container barra-superior">
+            <a class="marca" href="./">
+                <span class="marca-icone">⌂</span>
+                Lar<span>Estudante</span>
+            </a>
+
+            <div class="acoes-topo">
+                <a class="link-inicio" href="./">Início</a>
+
+                <nav
+                    id="menu-usuario"
+                    class="menu-usuario"
+                    aria-label="Navegação principal">
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container explorar-pagina">
+        <section class="explorar-apresentacao">
+            <p class="etiqueta">ENCONTRE SUA MORADIA</p>
+
+            <h1>Explorar repúblicas</h1>
+
+            <p>
+                Utilize os filtros para encontrar moradias
+                estudantis que atendam às suas necessidades.
+            </p>
+        </section>
+
+        <div class="explorar-layout">
+            <aside class="explorar-painel">
+                <h2>Filtrar resultados</h2>
+
+                <form id="form-filtros" class="form-filtros">
+                    <div class="campo">
+                        <label for="localizacao">
+                            Localização
+                        </label>
+
+                        <input
+                            type="text"
+                            id="localizacao"
+                            name="localizacao"
+                            placeholder="Ex.: Picos">
+                    </div>
+
+                    <div class="campo">
+                        <label for="preco_maximo">
+                            Preço máximo (R$)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="preco_maximo"
+                            name="preco_maximo"
+                            min="0.01"
+                            step="0.01"
+                            placeholder="Ex.: 800">
+                    </div>
+
+                    <div class="campo">
+                        <label for="comodidades">
+                            Comodidades
+                        </label>
+
+                        <input
+                            type="text"
+                            id="comodidades"
+                            name="comodidades"
+                            placeholder="Ex.: wi-fi, garagem">
+
+                        <small class="ajuda-campo">
+                            Separe as comodidades por vírgulas.
+                            O anúncio deve possuir todas elas.
+                        </small>
+                    </div>
+
+                    <div class="campo">
+                        <label for="genero_republica">
+                            Gênero da república
+                        </label>
+
+                        <input
+                            type="text"
+                            id="genero_republica"
+                            name="genero_republica"
+                            placeholder="Ex.: mista">
+                    </div>
+
+                    <div class="campo">
+                        <label for="max_moradores">
+                            Número máximo de moradores
+                        </label>
+
+                        <input
+                            type="number"
+                            id="max_moradores"
+                            name="max_moradores"
+                            min="1"
+                            step="1"
+                            placeholder="Ex.: 3">
+                    </div>
+
+                    <div class="campo">
+                        <label for="vagas_minimas">
+                            Vagas disponíveis mínimas
+                        </label>
+
+                        <input
+                            type="number"
+                            id="vagas_minimas"
+                            name="vagas_minimas"
+                            min="1"
+                            step="1"
+                            placeholder="Ex.: 2">
+                    </div>
+
+                    <button
+                        type="submit"
+                        id="botao-pesquisar"
+                        class="botao-primario">
+                        Aplicar filtros
+                    </button>
+
+                    <button
+                        type="button"
+                        id="botao-limpar"
+                        class="botao-secundario">
+                        Limpar filtros
+                    </button>
+                </form>
+            </aside>
+
+            <section class="explorar-resultados">
+                <div class="cabecalho-resultados">
+                    <div>
+                        <p class="etiqueta">MORADIAS</p>
+                        <h2>Repúblicas disponíveis</h2>
+                    </div>
+                </div>
+
+                <p
+                    id="estado-resultados"
+                    class="mensagem"
+                    role="status"
+                    aria-live="polite">
+                    Carregando repúblicas...
+                </p>
+
+                <div
+                    id="grade-resultados"
+                    class="grade-republicas">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        LarEstudante — Plataforma de moradia estudantil
+    </footer>
+</body>
+</html>

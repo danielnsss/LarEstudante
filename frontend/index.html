@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>LarEstudante — Encontre sua moradia</title>
-    <link rel="stylesheet" href="./css/style.css?v=2">
+
+    <link rel="stylesheet" href="./css/style.css?v=3">
+
     <script type="module" src="./js/busca.js"></script>
     <script type="module" src="./js/navegacao.js"></script>
 </head>
@@ -16,19 +19,18 @@
                 <span class="marca-icone">⌂</span>
                 Lar<span>Estudante</span>
             </a>
-            
-<div class="acoes-topo">
-    <span class="descricao-topo">
-        Moradia estudantil
-    </span>
 
-    <nav
-        id="menu-usuario"
-        class="menu-usuario"
-        aria-label="Navegação principal">
-    </nav>
-</div>
+            <div class="acoes-topo">
+                <span class="descricao-topo">
+                    Moradia estudantil
+                </span>
 
+                <nav
+                    id="menu-usuario"
+                    class="menu-usuario"
+                    aria-label="Navegação principal">
+                </nav>
+            </div>
         </div>
     </header>
 
@@ -36,8 +38,14 @@
         <section class="destaque">
             <div class="container">
                 <div class="destaque-conteudo">
-                    <p class="etiqueta">ENCONTRE SEU NOVO LAR</p>
-                    <h1>Seu lugar na vida universitária começa aqui.</h1>
+                    <p class="etiqueta">
+                        ENCONTRE SEU NOVO LAR
+                    </p>
+
+                    <h1>
+                        Seu lugar na vida universitária começa aqui.
+                    </h1>
+
                     <p class="subtitulo">
                         Encontre repúblicas e moradias compartilhadas
                         de acordo com suas necessidades.
@@ -45,31 +53,43 @@
 
                     <form id="form-busca" class="form-busca">
                         <div class="campo">
-                            <label for="localizacao">Localização</label>
+                            <label for="localizacao">
+                                Localização
+                            </label>
+
                             <input
                                 id="localizacao"
                                 name="localizacao"
                                 type="text"
-                                placeholder="Ex.: Picos"
-                            >
+                                placeholder="Ex.: Picos">
                         </div>
 
                         <div class="campo">
-                            <label for="preco">Preço máximo (R$)</label>
+                            <label for="preco">
+                                Preço máximo (R$)
+                            </label>
+
                             <input
                                 id="preco"
                                 name="preco_maximo"
                                 type="number"
                                 min="0.01"
                                 step="0.01"
-                                placeholder="Ex.: 800"
-                            >
+                                placeholder="Ex.: 800">
                         </div>
 
-                        <button type="submit" class="botao-primario">
+                        <button
+                            type="submit"
+                            class="botao-primario">
                             Buscar repúblicas
                         </button>
                     </form>
+
+                    <a
+                        class="atalho-explorar"
+                        href="./explorar.html">
+                        Explorar repúblicas com todos os filtros
+                    </a>
                 </div>
             </div>
         </section>
@@ -78,20 +98,33 @@
             <div class="titulo-secao">
                 <div>
                     <p class="etiqueta">MORADIAS</p>
+
                     <h2>Repúblicas disponíveis</h2>
-                    <p>Confira anúncios cadastrados na plataforma.</p>
+
+                    <p>
+                        Confira anúncios cadastrados na plataforma.
+                    </p>
                 </div>
             </div>
 
-            <p id="mensagem" class="mensagem" role="status"></p>
+            <p
+                id="mensagem"
+                class="mensagem"
+                role="status">
+            </p>
 
-            <div id="lista-republicas" class="grade-republicas"></div>
+            <div
+                id="lista-republicas"
+                class="grade-republicas">
+            </div>
         </section>
     </main>
 
     <footer class="rodape">
         <div class="container">
-            <p>LarEstudante — Plataforma de moradia estudantil</p>
+            <p>
+                LarEstudante — Plataforma de moradia estudantil
+            </p>
         </div>
     </footer>
 </body>

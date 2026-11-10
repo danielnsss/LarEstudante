@@ -460,3 +460,178 @@ h1 {
     align-items: center;
     gap: 22px;
 }
+
+
+/* Página Explorar Repúblicas */
+
+.link-inicio {
+    color: var(--primaria);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.link-inicio:hover {
+    text-decoration: underline;
+}
+
+.explorar-pagina {
+    padding-top: 55px;
+    padding-bottom: 90px;
+}
+
+.explorar-apresentacao {
+    margin-bottom: 35px;
+}
+
+.explorar-apresentacao h1 {
+    font-size: clamp(30px, 4vw, 42px);
+    margin: 12px 0 15px;
+}
+
+.explorar-apresentacao > p:last-child {
+    max-width: 660px;
+    color: var(--secundario);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.explorar-layout {
+    display: grid;
+    grid-template-columns: 290px minmax(0, 1fr);
+    align-items: start;
+    gap: 28px;
+}
+
+.explorar-painel {
+    padding: 25px;
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    box-shadow: 0 5px 22px #122d2410;
+}
+
+.explorar-painel h2 {
+    font-size: 21px;
+    margin: 0 0 25px;
+}
+
+.form-filtros {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.form-filtros .campo {
+    width: 100%;
+}
+
+.form-filtros input {
+    width: 100%;
+    height: 44px;
+    padding: 0 12px;
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+    color: var(--texto);
+    font: inherit;
+}
+
+.form-filtros input:focus {
+    outline: 2px solid var(--primaria);
+    outline-offset: 1px;
+}
+
+.ajuda-campo {
+    display: block;
+    margin-top: 7px;
+    color: var(--secundario);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.form-filtros button {
+    width: 100%;
+}
+
+.botao-secundario {
+    height: 46px;
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+    background: white;
+    color: var(--primaria);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.botao-secundario:hover {
+    background: var(--fundo);
+}
+
+.explorar-resultados {
+    min-width: 0;
+}
+
+.cabecalho-resultados {
+    margin-bottom: 20px;
+}
+
+.cabecalho-resultados h2 {
+    margin: 8px 0;
+    font-size: 28px;
+}
+
+.explorar-resultados .grade-republicas {
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 240px), 1fr)
+    );
+}
+
+@media (max-width: 850px) {
+    .explorar-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .explorar-painel {
+        width: 100%;
+    }
+}
+
+@media (max-width: 580px) {
+    .explorar-pagina {
+        padding-top: 35px;
+        padding-bottom: 55px;
+    }
+
+    .explorar-painel {
+        padding: 20px;
+    }
+
+    .explorar-apresentacao {
+        margin-bottom: 25px;
+    }
+
+    .cabecalho-resultados h2 {
+        font-size: 24px;
+    }
+}
+
+.atalho-explorar {
+    display: inline-block;
+    margin-top: 18px;
+    color: var(--primaria);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.atalho-explorar:hover {
+    color: var(--primaria-escura);
+}
+
+.atalho-explorar:focus-visible {
+    outline: 2px solid var(--primaria);
+    outline-offset: 4px;
+    border-radius: 3px;
+}
