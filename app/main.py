@@ -1,4 +1,4 @@
-
+from fastapi.staticfiles import StaticFiles
 from fastapi import Request
 from fastapi.responses import JSONResponse
 
@@ -80,3 +80,8 @@ async def tratar_conflito_persistencia(
         status_code=409,
         content={"detail": str(erro)}
     )
+app.mount(
+    "/web",
+    StaticFiles(directory="frontend", html=True),
+    name="frontend"
+)

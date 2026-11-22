@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Minhas Repúblicas — LarEstudante</title>
+
+    <link rel="stylesheet" href="./css/style.css?v=4">
+
+    <script type="module" src="./js/minhas-republicas.js"></script>
+    <script type="module" src="./js/navegacao.js"></script>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="container barra-superior">
+            <a class="marca" href="./">
+                <span class="marca-icone">⌂</span>
+                Lar<span>Estudante</span>
+            </a>
+
+            <div class="acoes-topo">
+                <a class="link-inicio" href="./">Início</a>
+
+                <a class="link-inicio" href="./explorar.html">
+                    Explorar
+                </a>
+
+                <nav
+                    id="menu-usuario"
+                    class="menu-usuario"
+                    aria-label="Navegação principal">
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container gestao-pagina">
+        <section class="gestao-apresentacao">
+            <p class="etiqueta">ÁREA DO LOCADOR</p>
+
+            <h1>Minhas repúblicas</h1>
+
+            <p>
+                Cadastre novos anúncios e gerencie as
+                repúblicas que você oferece na plataforma.
+            </p>
+        </section>
+
+        <section id="aviso-acesso" class="gestao-aviso" hidden>
+            <h2>Acesso à área do locador</h2>
+
+            <p id="texto-acesso" role="status"></p>
+
+            <a class="gestao-link-login" href="./login.html">
+                Ir para o login
+            </a>
+        </section>
+
+        <div id="conteudo-gestao" class="gestao-layout" hidden>
+            <section class="gestao-painel">
+                <div class="gestao-cabecalho-form">
+                    <p class="etiqueta">GERENCIAMENTO</p>
+
+                    <h2 id="titulo-formulario">
+                        Cadastrar república
+                    </h2>
+
+                    <p>
+                        Preencha as informações do anúncio.
+                    </p>
+                </div>
+
+                <form id="form-republica" class="form-gestao">
+                    <div class="campo">
+                        <label for="titulo">Título</label>
+
+                        <input
+                            type="text"
+                            id="titulo"
+                            name="titulo"
+                            placeholder="Ex.: República Universitária Picos"
+                            required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="descricao">Descrição</label>
+
+                        <textarea
+                            id="descricao"
+                            name="descricao"
+                            rows="4"
+                            placeholder="Descreva a moradia e suas características"
+                            required></textarea>
+                    </div>
+
+                    <div class="campo">
+                        <label for="preco">Preço (R$)</label>
+
+                        <input
+                            type="number"
+                            id="preco"
+                            name="preco"
+                            min="0.01"
+                            step="0.01"
+                            placeholder="Ex.: 650.00"
+                            required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="localizacao">Localização</label>
+
+                        <input
+                            type="text"
+                            id="localizacao"
+                            name="localizacao"
+                            placeholder="Ex.: Picos - PI"
+                            required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="genero_republica">
+                            Gênero da república
+                        </label>
+
+                        <input
+                            type="text"
+                            id="genero_republica"
+                            name="genero_republica"
+                            placeholder="Ex.: mista"
+                            required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="numero_moradores">
+                            Número de moradores
+                        </label>
+
+                        <input
+                            type="number"
+                            id="numero_moradores"
+                            name="numero_moradores"
+                            min="0"
+                            step="1"
+                            placeholder="Ex.: 3"
+                            required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="vagas_disponiveis">
+                            Vagas disponíveis
+                        </label>
+
+                        <input
+                            type="number"
+                            id="vagas_disponiveis"
+                            name="vagas_disponiveis"
+                            min="0"
+                            step="1"
+                            placeholder="Ex.: 2"
+                            required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="comodidades">
+                            Comodidades
+                        </label>
+
+                        <input
+                            type="text"
+                            id="comodidades"
+                            name="comodidades"
+                            placeholder="Ex.: wi-fi, lavanderia, garagem">
+
+                        <small class="ajuda-campo">
+                            Separe as comodidades por vírgulas.
+                        </small>
+                    </div>
+
+                    <button
+                        type="submit"
+                        id="botao-salvar"
+                        class="botao-primario">
+                        Cadastrar república
+                    </button>
+
+                    <button
+                        type="button"
+                        id="botao-cancelar"
+                        class="botao-secundario"
+                        hidden>
+                        Cancelar edição
+                    </button>
+                </form>
+
+                <p
+                    id="mensagem-formulario"
+                    class="gestao-mensagem"
+                    role="status"
+                    aria-live="polite">
+                </p>
+            </section>
+
+            <section class="gestao-resultados">
+                <div class="gestao-cabecalho-lista">
+                    <div>
+                        <p class="etiqueta">MEUS ANÚNCIOS</p>
+                        <h2>Repúblicas cadastradas</h2>
+                    </div>
+
+                    <button
+                        type="button"
+                        id="botao-atualizar"
+                        class="botao-secundario">
+                        Atualizar lista
+                    </button>
+                </div>
+
+                <p
+                    id="estado-lista"
+                    class="gestao-mensagem"
+                    role="status"
+                    aria-live="polite">
+                    Carregando seus anúncios...
+                </p>
+
+                <div
+                    id="lista-minhas-republicas"
+                    class="gestao-lista">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <p>
+                LarEstudante — Plataforma de moradia estudantil
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -45,6 +45,15 @@ formulario.addEventListener("submit", async evento => {
 
         guardarToken(resposta.access_token);
 
+        document.dispatchEvent(
+            new Event("larestudante:sessao")
+        );
+
+        if (perfil.tipo === "locador") {
+            window.location.assign("./minhas-republicas.html");
+            return;
+        }
+
         mostrarMensagem(
             `Bem-vindo(a), ${perfil.nome}! Perfil: ${perfil.tipo}.`,
             "sucesso"
@@ -52,11 +61,10 @@ formulario.addEventListener("submit", async evento => {
 
         formulario.reset();
         formulario.hidden = true;
-        linkSucesso.hidden = false;
 
-        document.dispatchEvent(
-            new Event("larestudante:sessao")
-        );
+        linkSucesso.href = "./";
+        linkSucesso.textContent = "Ir para a página inicial";
+        linkSucesso.hidden = false;
 
     } catch (erro) {
         mostrarMensagem(

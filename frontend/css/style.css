@@ -635,3 +635,281 @@ h1 {
     outline-offset: 4px;
     border-radius: 3px;
 }
+
+
+/* Passo 14.4 - Gerenciamento de Repúblicas */
+
+.gestao-pagina [hidden] {
+    display: none !important;
+}
+
+.gestao-pagina {
+    padding-top: 50px;
+    padding-bottom: 90px;
+}
+
+.gestao-apresentacao {
+    margin-bottom: 35px;
+}
+
+.gestao-apresentacao h1 {
+    margin: 12px 0 15px;
+    font-size: clamp(30px, 4vw, 42px);
+}
+
+.gestao-apresentacao > p:last-child {
+    max-width: 650px;
+    color: var(--secundario);
+    line-height: 1.6;
+}
+
+.gestao-layout {
+    display: grid;
+    grid-template-columns: minmax(290px, 360px) minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+}
+
+.gestao-painel,
+.gestao-aviso {
+    background: white;
+    padding: 28px;
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    box-shadow: 0 5px 22px #122d2410;
+}
+
+.gestao-cabecalho-form {
+    margin-bottom: 25px;
+}
+
+.gestao-cabecalho-form h2 {
+    margin: 10px 0;
+    font-size: 23px;
+}
+
+.gestao-cabecalho-form > p:last-child {
+    color: var(--secundario);
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.form-gestao {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-gestao .campo {
+    width: 100%;
+}
+
+.form-gestao input,
+.form-gestao textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+    color: var(--texto);
+    font: inherit;
+    background: white;
+}
+
+.form-gestao input {
+    height: 46px;
+}
+
+.form-gestao textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.form-gestao input:focus,
+.form-gestao textarea:focus {
+    outline: 2px solid var(--primaria);
+    outline-offset: 1px;
+}
+
+.form-gestao button {
+    width: 100%;
+}
+
+.gestao-mensagem {
+    color: var(--secundario);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.gestao-painel > .gestao-mensagem {
+    margin-top: 18px;
+}
+
+.gestao-resultados {
+    min-width: 0;
+}
+
+.gestao-cabecalho-lista {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.gestao-cabecalho-lista h2 {
+    margin: 8px 0;
+    font-size: 27px;
+}
+
+.gestao-cabecalho-lista .botao-secundario {
+    padding: 11px 17px;
+    height: auto;
+    white-space: nowrap;
+}
+
+.gestao-lista {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 280px), 1fr)
+    );
+    gap: 20px;
+}
+
+.gestao-cartao {
+    min-width: 0;
+    background: white;
+    padding: 25px;
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    box-shadow: 0 5px 22px #122d2410;
+}
+
+.gestao-indicador {
+    color: var(--primaria);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.gestao-cartao h3 {
+    margin: 13px 0 15px;
+    font-size: 21px;
+    line-height: 1.4;
+}
+
+.gestao-preco {
+    color: var(--primaria);
+    font-size: 23px;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.gestao-detalhe {
+    color: var(--secundario);
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.gestao-acoes {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--borda);
+}
+
+.gestao-acoes button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 9px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.gestao-botao-editar {
+    color: var(--primaria);
+    background: white;
+    border: 1px solid var(--primaria);
+}
+
+.gestao-botao-editar:hover {
+    background: #edf7f2;
+}
+
+.gestao-botao-excluir {
+    color: #a32626;
+    background: white;
+    border: 1px solid #d8a0a0;
+}
+
+.gestao-botao-excluir:hover {
+    background: #fff0f0;
+}
+
+.gestao-aviso {
+    max-width: 560px;
+}
+
+.gestao-aviso h2 {
+    margin-top: 0;
+}
+
+.gestao-aviso p {
+    color: var(--secundario);
+    line-height: 1.6;
+}
+
+.gestao-link-login {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 12px 18px;
+    background: var(--primaria);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 9px;
+}
+
+.gestao-link-login:hover {
+    background: var(--primaria-escura);
+}
+
+.gestao-pagina button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+@media (max-width: 900px) {
+    .gestao-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .gestao-painel {
+        max-width: 650px;
+    }
+}
+
+@media (max-width: 580px) {
+    .gestao-pagina {
+        padding-top: 35px;
+        padding-bottom: 55px;
+    }
+
+    .gestao-painel,
+    .gestao-aviso {
+        padding: 20px;
+    }
+
+    .gestao-cabecalho-lista {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .gestao-cabecalho-lista h2 {
+        font-size: 24px;
+    }
+}
